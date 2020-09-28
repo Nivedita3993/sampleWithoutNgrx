@@ -1,0 +1,20 @@
+<h3>Hello {{ checklistDetails?.username}}</h3>
+
+<ul>
+    <li *ngIf="!checklistDetails?.username">
+        <label>All done. Good Job!!!</label>
+    </li>
+    <li *ngFor="let todo of checklistDetails?.todolist">
+        <input type="checkbox" [id]="todo.taskID" [checked]="todo.isDone">
+        <label [for]="todo.taskID">
+            <div class="checkBoxIcon"><i class="fa fa-check"></i></div>
+            {{!todo.isEditable ? todo.taskDesc : ''}}
+        </label>
+        <input type="text" [(ngModel)]="todo.taskDesc" [value]="todo.taskDesc" *ngIf="todo.isEditable">
+        <span class="editIcon" *ngIf="!todo.isEditable" (click)="todo.isEditable = true"><i class="fa fa-edit"></i></span>
+        <span class="editIcon" *ngIf="todo.isEditable" (click)="updateTaskDesc(todo)"><i class="fa fa-check-circle"></i></span>
+        <span class="deleteIcon" (click)="deleteTaskDesc(todo.taskID)"><i class="fa fa-minus-circle"></i></span>
+    </li>
+</ul>
+
+<button><span class="addIcon" (click)="addTaskDesc()"><i class="fa fa-plus-square"></i></span> Task</button>

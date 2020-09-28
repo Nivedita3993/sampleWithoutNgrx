@@ -1,0 +1,38 @@
+ul,
+li {
+  list-style: none;
+}
+input[type="checkbox"] {
+  visibility: hidden;
+}
+label .checkBoxIcon {
+  width: 23px;
+  height: 23px;
+  display: inline-block;
+  border: 2px solid #fff;
+  text-align: center;
+  line-height: 20px;
+  margin-right: 6px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+label .fa-check {
+  font-size: 16px;
+  opacity: 0;
+}
+label:hover .checkBoxIcon {
+  background: #16a085;
+}
+input:checked + label .fa-check {
+  opacity: 1;
+}
+input:checked + label .checkBoxIcon {
+  background: #16a085;
+}
+
+input[type="text"] {
+    height: 25px;
+    box-shadow: none;
+    border-image: none;
+}

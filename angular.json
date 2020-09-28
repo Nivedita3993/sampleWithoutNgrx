@@ -66,7 +66,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "todoList:build"
+            "browserTarget": "todoList:build",
+            "proxyConfig": "proxy.conf.json"
           },
           "configurations": {
             "production": {
@@ -123,6 +124,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "todoList"
+    }
+  },
+  "defaultProject": "todoList",
+  "cli": {
+    "analytics": "52478e89-d435-4459-a7ef-21f01d666d9e"
+  }
 }
